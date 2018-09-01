@@ -1,0 +1,22 @@
+1、介绍
+光学文字识别（Optical Character Recognition），简写为OCR
+Tesseract是一个OCR库，目前由谷歌赞助。
+Tesseract是目前公认最优秀、最准确的开源OCR库。
+Tesseract具有很高的识别度，也具有很高的灵活性，他可以通过训练识别任何字体。
+
+2、Windows下安装
+https://digi.bib.uni-mannheim.de/tesseract/
+安装完成后，如果想要在命令行中使用Tesseract，那么应该设置环境变量。
+在Windows下把tesseract.exe所在的路径D:\tesseract\Tesseract-OCR添加到PATH环境变量中。
+
+还有一个环境变量需要设置的是，要把训练的数据文件路径也放到环境变量中。
+在环境变量中，添加一个TESSDATA_PREFIX=D:\tesseract\Tesseract-OCR\tessdata。
+
+3、在命令行中使用tesseract识别图像
+tesseract 要识别的图片 保存文字的名称
+识别英文：tesseract a.png a
+
+要识别中文的需要下载简体中文包：https://raw.githubusercontent.com/tesseract-ocr/tessdata/4.00/chi_sim.traineddata
+下载好之后放在D:\tesseract\Tesseract-OCR\tessdata
+查看语言：tesseract --list-langs
+识别简体中文：tesseract -l chi_sim c.png c
